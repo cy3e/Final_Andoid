@@ -3,6 +3,8 @@ package com.example.me_net;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -24,6 +26,7 @@ public class subirImagenes  extends MainActivity
 
     FirebaseStorage storage = FirebaseStorage.getInstance();
 
+
     EditText cap = findViewById(R.id.caption);
     ImageButton pic = findViewById(R.id.subir);
     ImageButton vol = findViewById(R.id.reg);
@@ -36,11 +39,14 @@ public class subirImagenes  extends MainActivity
         setContentView(R.layout.subirmeme);
         subir();
         mosimage();
+        votones();
     }
 
     private void mosimage()
     {
         // aqui va la funcion de mostrar la imagen en el imageView
+
+
 
     }
 
@@ -53,6 +59,31 @@ public class subirImagenes  extends MainActivity
          Intent inte = new Intent (subirImagenes.this,PERFIL.class);
          startActivity(inte);
          Toast.makeText(getApplicationContext(), alagos[i], Toast.LENGTH_LONG).show();
+     }
+
+     private void votones() {
+         {
+             vip.setOnClickListener(new View.OnClickListener() {
+                 @Override
+                 public void onClick(View view) {
+                     //en esta debo pedir la imagen par luego mandarla a la clase subir memes
+                     Intent imageintent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                     imageintent.setType("image/");
+                     startActivityIfNeeded(imageintent.createChooser(imageintent, "Seleccione la app"), 10);
+                 }
+             });
+
+         }
+     }
+
+     protected void onActivityResult(int requestC,int resultC,Intent data) {
+         super.onActivityResult(requestC, resultC, data);
+         if (resultC == RESULT_OK)
+         {
+             Uri path = data.getData();
+             vip.setImageURI(path);
+
+         }
      }
 
      private void subimagen()
