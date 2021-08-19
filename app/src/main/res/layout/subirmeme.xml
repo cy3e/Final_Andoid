@@ -8,7 +8,7 @@
     android:background="#FFFFFF">
 
     <ImageView
-        android:id="@+id/viewmage"
+        android:id="@+id/vimage"
         android:layout_width="415dp"
         android:layout_height="740dp"
         android:background="#FFFFFF"

@@ -27,7 +27,7 @@ public class subirImagenes  extends MainActivity
     EditText cap = findViewById(R.id.caption);
     ImageButton pic = findViewById(R.id.subir);
     ImageButton vol = findViewById(R.id.reg);
-    ImageView vip = findViewById(R.id.viewmage);
+    ImageView vip = findViewById(R.id.vimage);
 
     String alagos[] = {"oh que foto mas mona tenemos ","que divertitda foto vemos aqui jajsds"," encerio subiste eso ","Dios mio que fotazo"};
 
@@ -66,12 +66,18 @@ public class subirImagenes  extends MainActivity
              @Override
              public void onFailure(@NonNull Exception exception) {
                  // Handle unsuccessful uploads
+
+                 Toast.makeText(getApplicationContext(),"no se pudo enviar la imagen reintente mas tarde",Toast.LENGTH_LONG);
+
              }
          }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
              @Override
              public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                  // taskSnapshot.getMetadata() contains file metadata such as size, content-type, etc.
                  // ...
+                 Intent volver = new Intent(subirImagenes.this,PERFIL.class);
+                 startActivity(volver);
+
              }
          });
      }

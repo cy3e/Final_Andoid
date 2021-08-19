@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.appcheck.FirebaseAppCheck;
 import com.google.firebase.appcheck.safetynet.SafetyNetAppCheckProviderFactory;
@@ -104,7 +103,7 @@ public class MainActivity extends AppCompatActivity
 
     ////////////////////////////////////FIREBASE/////////////////////////////////////////////////
 
-    public void updateUI(GoogleSignInAccount account){
+    public void updateUI(FirebaseUser account){
 
         if(account != null){
             Toast.makeText(this,"U Signed In successfully",Toast.LENGTH_LONG).show();
