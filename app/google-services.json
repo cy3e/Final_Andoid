@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "113093259683",
+    "project_id": "mem-ne",
+    "storage_bucket": "mem-ne.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113093259683:android:ac359293a10733faf3ea16",
+        "android_client_info": {
+          "package_name": "com.example.me_net"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "113093259683-5cgcq308ag8qmph4bgp8oa212sppo9qt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCA5mfbAXKXgRt5h9Fc65G0ct6jR43C0B8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "113093259683-5cgcq308ag8qmph4bgp8oa212sppo9qt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
